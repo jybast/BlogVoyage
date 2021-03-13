@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+	{% block header %}
+		<header class="header">
+			<div class="titre">
+				<h1 class="header-titre">Passion Voyage</h1>
+				<h2 class="header-caption">
+					Partager nos voyages en famille.</h2>
+			</div>
+			{% block navigation %}
+			<div class="menu">
+                <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img src="{{ asset('assets/img/blog_logo.png')}}" alt="Logo" width="60px">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-menu active" aria-current="page" href="{{ path('blog_accueil')}}">Accueil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-menu" href="{{ path('blog_contact')}}">Contacts</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-menu dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Nos articles
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li>
+                                            <a class="dropdown-item" href="#">Voyages</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Conseils</a>
+                                        </li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Astuces</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-menu disabled" href="{{ path('blog_apropos')}}" tabindex="-1" aria-disabled="true">A Propos de nous</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex">
+                                <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Rechercher</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+			{% endblock %}
+		</header>
+	{% endblock %}
+	{% block main %}
+		<div class="main">
+			Principal
+			<style>
+				.example-wrapper {
+					margin: 1em auto;
+					max-width: 800px;
+					width: 95%;
+					font: 18px / 1.5 sans-serif;
+				}
+				.example-wrapper code {
+					background: #F5F5F5;
+					padding: 2px 6px;
+				}
+			</style>
+
+			<div class="example-wrapper">
+				<h1>Hello
+					{{ controller_name }}! ✅</h1>
+
+				This friendly message is coming from:
+				<ul>
+					<li>Your controller at
+						<code>
+							<a href="{{ 'D:/wamp64/www/BlogVoyage/src/Controller/PageController.php'|file_link(0) }}">src/Controller/PageController.php</a>
+						</code>
+					</li>
+					<li>Your template at
+						<code>
+							<a href="{{ 'D:/wamp64/www/BlogVoyage/templates/page/accueil.html.twig'|file_link(0) }}">templates/page/index.html.twig</a>
+						</code>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	{% endblock %}
+
+	{% block sidebar %}
+		<aside class="sidebar">
+			Sidebar
+		</aside>
+	{% endblock %}
+
+
+{% endblock %}
