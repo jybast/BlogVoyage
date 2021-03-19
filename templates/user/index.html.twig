@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des membres{% endblock %}
+
+{% block body %}
+    <h1>Liste des membres</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Password</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Pseudo</th>
+                <th>Rue</th>
+                <th>Ville</th>
+                <th>Cp</th>
+                <th>Téléphone</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.nom }}</td>
+                <td>{{ user.prenom }}</td>
+                <td>{{ user.pseudo }}</td>
+                <td>{{ user.rue }}</td>
+                <td>{{ user.ville }}</td>
+                <td>{{ user.cp }}</td>
+                <td>{{ user.telephone }}</td>
+                <td>
+                    <a href="{{ path('user_show', {'id': user.id}) }}">Voir un utilisateur</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}">Modifier un utilisateur</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">Aucun enregistrement valide</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_new') }}">Créer un utilisateur</a>
+{% endblock %}

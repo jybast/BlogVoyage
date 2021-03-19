@@ -20,7 +20,8 @@
     <body>
         <!-- Grid container de la page -->
         <div class="grid-container">
-       
+        {% block body %}
+
         <!-- ########  Haut de page  ########## --> 
         {% block header %}
             <header class="header">
@@ -36,7 +37,7 @@
         
 
         <!-- ########## Corps de page ########## -->
-        {% block body %}
+        
          
             {% block main %}
                 <div class="main">
@@ -50,37 +51,13 @@
                 </aside>
             {% endblock %}
 
-        {% endblock %}
+
         <!-- ######### Bas de page ########### -->
         {% block footer %}
-            <footer class="footer">
-                <div class="footer1"> 
-                <ul >
-                    <li>Accueil</li>    
-                    <li>Actualités</li> 
-                    <li>Contacts</li> 
-                    <li>A propos</li> 
-                </ul>
-            </div>
-            <div class="footer2">
-                <table>
-                    <tr>
-                        <td><img src="{{ asset('assets/img/cabine.jpg')}}" alt="Photo" width="100px"></td>
-                        <td><img src="{{ asset('assets/img/desert.jpg')}}" alt="Photo" width="100px"></td>
-                        
-                    </tr>
-                     <tr>
-                        <td><img src="{{ asset('assets/img/cabine.jpg')}}" alt="Photo" width="100px"></td>
-                        <td><img src="{{ asset('assets/img/desert.jpg')}}" alt="Photo" width="100px"></td>
-                        
-                    </tr>
-                </table>
-            </div>
-            <div class="footer3"></div>
-            <div class="footer4"></div>
-            <div class="copyright"> Tous droits réservés - JyB@st 2021</div>
+            {% include "includes/_footer.html.twig" %}
          {% endblock %}
-        
+         
+        {% endblock %}        
         </div>  <!-- Fin bloc grid-container -->
 
         {% block javascripts %}

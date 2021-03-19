@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PageController extends AbstractController
 {
     /**
-     * @Route("/accueil", name="blog_accueil")
+     * @Route("/accueil", name="app_accueil")
      *
      * @return Response
      */
@@ -24,7 +24,7 @@ class PageController extends AbstractController
     }
     
     /**
-     * @Route("/apropos", name="blog_apropos")
+     * @Route("/apropos", name="app_apropos")
      *
      * @return Response
      */
@@ -36,7 +36,7 @@ class PageController extends AbstractController
     }
 
     /**
-     * @Route("/contact", name="blog_contact")
+     * @Route("/contact", name="app_contact")
      *
      * @return Response
      */
